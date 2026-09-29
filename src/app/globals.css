@@ -1,26 +1,114 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-ivory: #FAF7F2;
+    --bg-ivory-dark: #F3ECE2;
+    --bg-card: #FFFFFF;
+    --color-botanical: #14281D;
+    --color-botanical-light: #1E3B2B;
+    --color-sage: #8A9A86;
+    --color-terracotta: #C2845A;
+    --color-sand: #E6DFD5;
+    --color-charcoal: #1C201D;
+    --color-muted: #5A645D;
+    --color-accent: #B87D4B;
+  }
+
+  body {
+    background-color: var(--bg-ivory);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif-heading {
+    font-family: var(--font-serif), Georgia, serif;
+    letter-spacing: -0.01em;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom Utilities for Premium Editorial Feel */
+.bg-ivory {
+  background-color: #FAF7F2;
+}
+
+.bg-ivory-dark {
+  background-color: #F3ECE2;
+}
+
+.bg-botanical {
+  background-color: #14281D;
+}
+
+.bg-botanical-light {
+  background-color: #1E3B2B;
+}
+
+.text-botanical {
+  color: #14281D;
+}
+
+.text-charcoal {
+  color: #1C201D;
+}
+
+.text-muted-green {
+  color: #5A645D;
+}
+
+.text-terracotta {
+  color: #C2845A;
+}
+
+.text-accent-gold {
+  color: #B87D4B;
+}
+
+.border-sand {
+  border-color: #E6DFD5;
+}
+
+.border-sand-dark {
+  border-color: #D8CEBE;
+}
+
+/* Subtle image reveal animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Smooth Image Scale on Hover */
+.img-hover-zoom {
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.img-hover-zoom:hover {
+  transform: scale(1.03);
+}
+
+/* Custom scrollbar for subtle luxury experience */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8CEBE;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B87D4B;
 }
